@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using VISUALISE.Models;
-using VISUALISE.Views;
-using VISUALISE.ViewModels;
+using Visualise.Models;
+using Visualise.Views;
+using Visualise.ViewModels;
 
-namespace VISUALISE.Views
+namespace Visualise.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

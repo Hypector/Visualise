@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3AF82AE0-5FDE-42F6-8135-B629D8FD9351}</ProjectGuid>
+    <ProjectGuid>{7FF83513-BC79-4F2B-A2A8-772596FE009F}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TemplateGuid>{65C0771A-452F-423B-995C-F0AE46E643BA}</TemplateGuid>
+    <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>VISUALISE.iOS</RootNamespace>
+    <RootNamespace>Visualise.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>VISUALISE.iOS</AssemblyName>
+    <AssemblyName>Visualise.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
@@ -134,9 +134,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\VISUALISE\VISUALISE.csproj">
-      <Project>{326C7722-BD12-485B-9344-940782184273}</Project>
-      <Name>VISUALISE</Name>
+    <ProjectReference Include="..\Visualise\Visualise.csproj">
+      <Project>{446530BB-1419-4480-90B3-A28808A87031}</Project>
+      <Name>Visualise</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

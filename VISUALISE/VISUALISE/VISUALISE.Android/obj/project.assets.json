@@ -840,7 +840,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "VISUALISE/1.0.0": {
+      "Visualise/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -848,10 +848,10 @@
           "Xamarin.Forms": "4.1.0.555618"
         },
         "compile": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         }
       }
     }
@@ -1712,6 +1712,7 @@
         "lib/monoandroid81/Xamarin.Essentials.pdb",
         "lib/monoandroid81/Xamarin.Essentials.xml",
         "lib/monoandroid90/Xamarin.Essentials.dll",
+        "lib/monoandroid90/Xamarin.Essentials.dll.mdb",
         "lib/monoandroid90/Xamarin.Essentials.pdb",
         "lib/monoandroid90/Xamarin.Essentials.xml",
         "lib/netstandard1.0/Xamarin.Essentials.dll",
@@ -1978,18 +1979,19 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "VISUALISE/1.0.0": {
+    "Visualise/1.0.0": {
       "type": "project",
-      "path": "../VISUALISE/VISUALISE.csproj",
-      "msbuildProject": "../VISUALISE/VISUALISE.csproj"
+      "path": "../Visualise/Visualise.csproj",
+      "msbuildProject": "../Visualise/Visualise.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
-      "VISUALISE >= 1.0.0",
+      "Visualise >= 1.0.0",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.1",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.1",
       "Xamarin.Android.Support.Design >= 28.0.0.1",
+      "Xamarin.Android.Support.ViewPager >= 28.0.0.1",
       "Xamarin.Android.Support.v4 >= 28.0.0.1",
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.1",
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.1",
@@ -1999,24 +2001,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Matthieu\\.nuget\\packages\\": {},
+    "C:\\Users\\Abhi\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
-      "projectName": "VISUALISE.Android",
-      "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
-      "packagesPath": "C:\\Users\\Matthieu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\obj\\",
+      "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\Visualise.Android.csproj",
+      "projectName": "Visualise.Android",
+      "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\Visualise.Android.csproj",
+      "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Matthieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Abhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2030,8 +2032,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
-              "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj"
+            "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj": {
+              "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj"
             }
           }
         }
@@ -2049,6 +2051,10 @@
             "version": "[28.0.0.1, )"
           },
           "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[28.0.0.1, )"
+          },
+          "Xamarin.Android.Support.ViewPager": {
             "target": "Package",
             "version": "[28.0.0.1, )"
           },

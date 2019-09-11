@@ -1,10 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using VISUALISE.Services;
-using VISUALISE.Views;
+using Visualise.Services;
+using Visualise.Views;
 
-namespace VISUALISE
+namespace Visualise
 {
     public partial class App : Application
     {
@@ -14,7 +14,7 @@ namespace VISUALISE
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

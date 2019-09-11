@@ -280,6 +280,7 @@
         "lib/monoandroid81/Xamarin.Essentials.pdb",
         "lib/monoandroid81/Xamarin.Essentials.xml",
         "lib/monoandroid90/Xamarin.Essentials.dll",
+        "lib/monoandroid90/Xamarin.Essentials.dll.mdb",
         "lib/monoandroid90/Xamarin.Essentials.pdb",
         "lib/monoandroid90/Xamarin.Essentials.xml",
         "lib/netstandard1.0/Xamarin.Essentials.dll",
@@ -555,25 +556,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Matthieu\\.nuget\\packages\\": {},
+    "C:\\Users\\Abhi\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj",
-      "projectName": "VISUALISE",
-      "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj",
-      "packagesPath": "C:\\Users\\Matthieu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\obj\\",
+      "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj",
+      "projectName": "Visualise",
+      "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj",
+      "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Matthieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Abhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

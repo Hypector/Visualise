@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace VISUALISE.Services
+namespace Visualise.Services
 {
     public interface IDataStore<T>
     {

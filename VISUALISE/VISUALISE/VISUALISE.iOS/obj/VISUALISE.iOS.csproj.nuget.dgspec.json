@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\VISUALISE.iOS.csproj": {}
+    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\Visualise.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\VISUALISE.iOS.csproj": {
+    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\Visualise.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\VISUALISE.iOS.csproj",
-        "projectName": "VISUALISE.iOS",
-        "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\VISUALISE.iOS.csproj",
-        "packagesPath": "C:\\Users\\Matthieu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\obj\\",
+        "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\Visualise.iOS.csproj",
+        "projectName": "Visualise.iOS",
+        "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\Visualise.iOS.csproj",
+        "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Matthieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
-                "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj"
+              "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj": {
+                "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj"
               }
             }
           }
@@ -65,21 +65,21 @@
         }
       }
     },
-    "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
+    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj",
-        "projectName": "VISUALISE",
-        "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj",
-        "packagesPath": "C:\\Users\\Matthieu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\obj\\",
+        "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj",
+        "projectName": "Visualise",
+        "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj",
+        "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Matthieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

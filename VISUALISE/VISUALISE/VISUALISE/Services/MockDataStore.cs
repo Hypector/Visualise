@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VISUALISE.Models;
+using Visualise.Models;
 
-namespace VISUALISE.Services
+namespace Visualise.Services
 {
     public class MockDataStore : IDataStore<Item>
     {

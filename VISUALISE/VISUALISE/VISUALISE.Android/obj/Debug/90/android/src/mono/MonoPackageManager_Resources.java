@@ -1,10 +1,10 @@
 package mono;
 public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
-		/* We need to ensure that "VISUALISE.Android.dll" comes first in this list. */
-		"VISUALISE.Android.dll",
+		/* We need to ensure that "Visualise.Android.dll" comes first in this list. */
+		"Visualise.Android.dll",
 		"FormsViewGroup.dll",
-		"VISUALISE.dll",
+		"Visualise.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
