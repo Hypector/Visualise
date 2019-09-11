@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VISUALISE.Models
+namespace Visualise.Models
 {
     public class Item
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace VISUALISE.iOS
+namespace Visualise.iOS
 {
     public class Application
     {

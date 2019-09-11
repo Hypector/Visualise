@@ -1,8 +1,8 @@
 ﻿using System;
 
-using VISUALISE.Models;
+using Visualise.Models;
 
-namespace VISUALISE.ViewModels
+namespace Visualise.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {

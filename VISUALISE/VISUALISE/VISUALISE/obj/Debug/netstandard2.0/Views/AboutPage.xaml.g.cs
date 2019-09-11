@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("VISUALISE.Views.AboutPage.xaml", "Views/AboutPage.xaml", typeof(global::VISUALISE.Views.AboutPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Visualise.Views.AboutPage.xaml", "Views/AboutPage.xaml", typeof(global::Visualise.Views.AboutPage))]
 
-namespace VISUALISE.Views {
+namespace Visualise.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\AboutPage.xaml")]

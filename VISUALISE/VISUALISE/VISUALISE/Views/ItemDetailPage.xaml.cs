@@ -3,10 +3,10 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using VISUALISE.Models;
-using VISUALISE.ViewModels;
+using Visualise.Models;
+using Visualise.ViewModels;
 
-namespace VISUALISE.Views
+namespace Visualise.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

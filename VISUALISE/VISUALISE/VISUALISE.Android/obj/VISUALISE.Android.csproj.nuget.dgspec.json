@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj": {}
+    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\Visualise.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj": {
+    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\Visualise.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
-        "projectName": "VISUALISE.Android",
-        "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\Visualise.Android.csproj",
+        "projectName": "Visualise.Android",
+        "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\Visualise.Android.csproj",
         "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\obj\\",
+        "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
-                "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj"
+              "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj": {
+                "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj"
               }
             }
           }
@@ -51,6 +51,10 @@
               "version": "[28.0.0.1, )"
             },
             "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.ViewPager": {
               "target": "Package",
               "version": "[28.0.0.1, )"
             },
@@ -82,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
+    "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj",
-        "projectName": "VISUALISE",
-        "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj",
+        "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj",
+        "projectName": "Visualise",
+        "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj",
         "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\obj\\",
+        "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

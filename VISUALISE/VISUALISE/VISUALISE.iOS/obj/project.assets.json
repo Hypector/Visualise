@@ -149,7 +149,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "VISUALISE/1.0.0": {
+      "Visualise/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -157,10 +157,10 @@
           "Xamarin.Forms": "4.1.0.555618"
         },
         "compile": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         }
       }
     },
@@ -312,7 +312,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "VISUALISE/1.0.0": {
+      "Visualise/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -320,10 +320,10 @@
           "Xamarin.Forms": "4.1.0.555618"
         },
         "compile": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         }
       }
     },
@@ -475,7 +475,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "VISUALISE/1.0.0": {
+      "Visualise/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -483,10 +483,10 @@
           "Xamarin.Forms": "4.1.0.555618"
         },
         "compile": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         }
       }
     },
@@ -638,7 +638,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "VISUALISE/1.0.0": {
+      "Visualise/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -646,10 +646,10 @@
           "Xamarin.Forms": "4.1.0.555618"
         },
         "compile": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VISUALISE.dll": {}
+          "bin/placeholder/Visualise.dll": {}
         }
       }
     }
@@ -725,6 +725,7 @@
         "lib/monoandroid81/Xamarin.Essentials.pdb",
         "lib/monoandroid81/Xamarin.Essentials.xml",
         "lib/monoandroid90/Xamarin.Essentials.dll",
+        "lib/monoandroid90/Xamarin.Essentials.dll.mdb",
         "lib/monoandroid90/Xamarin.Essentials.pdb",
         "lib/monoandroid90/Xamarin.Essentials.xml",
         "lib/netstandard1.0/Xamarin.Essentials.dll",
@@ -991,15 +992,15 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "VISUALISE/1.0.0": {
+    "Visualise/1.0.0": {
       "type": "project",
-      "path": "../VISUALISE/VISUALISE.csproj",
-      "msbuildProject": "../VISUALISE/VISUALISE.csproj"
+      "path": "../Visualise/Visualise.csproj",
+      "msbuildProject": "../Visualise/Visualise.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "VISUALISE >= 1.0.0",
+      "Visualise >= 1.0.0",
       "Xamarin.Essentials >= 1.1.0",
       "Xamarin.Forms >= 4.1.0.555618"
     ]
@@ -1011,11 +1012,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\VISUALISE.iOS.csproj",
-      "projectName": "VISUALISE.iOS",
-      "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\VISUALISE.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\Visualise.iOS.csproj",
+      "projectName": "Visualise.iOS",
+      "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\Visualise.iOS.csproj",
       "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1036,8 +1037,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
-              "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj"
+            "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj": {
+              "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\Visualise\\Visualise\\Visualise\\Visualise.csproj"
             }
           }
         }
