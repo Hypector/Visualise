@@ -1999,24 +1999,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Matthieu\\.nuget\\packages\\": {},
+    "C:\\Users\\Abhi\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
       "projectName": "VISUALISE.Android",
-      "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
-      "packagesPath": "C:\\Users\\Matthieu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\obj\\",
+      "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\VISUALISE.Android.csproj",
+      "packagesPath": "C:\\Users\\Abhi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Matthieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Abhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2030,8 +2030,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
-              "projectPath": "C:\\Users\\Matthieu\\Documents\\GitHub\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj"
+            "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj": {
+              "projectPath": "C:\\Users\\Abhi\\Desktop\\Visualise\\IAB330-App\\VISUALISE\\VISUALISE\\VISUALISE\\VISUALISE.csproj"
             }
           }
         }
