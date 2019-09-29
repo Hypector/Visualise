@@ -35,8 +35,13 @@ namespace Visualise.ViewModels
 				Form form = await DataStore.GetFormAsync(newEntry.FormID);
 				form.XFormValues.Add(entry.Val1);
 				form.YFormValues.Add(entry.Val2);
-				Console.WriteLine("=========================================================");
-				Console.WriteLine("=========================================================");
+				form.EntryCount++;
+				form.EntryCountString = form.EntryCount.ToString() + " entries";
+				if (form.EntryCount == 1) {
+					form.EntryCountString = form.EntryCount.ToString() + " entry";
+				} else {
+					form.EntryCountString = form.EntryCount.ToString() + " entries";
+				}
 				await DataStore.UpdateFormAsync(form);
 
 //                Forms.Add(newForm);

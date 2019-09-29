@@ -24,7 +24,7 @@ namespace Visualise.Views
             if (form == null)
                 return;
 
-            await Navigation.PushModalAsync(new NavigationPage(new ItemDetailPage(new ItemDetailViewModel(form))));
+            await Navigation.PushAsync(new ChartPage(new ChartViewModel(form)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

@@ -12,5 +12,8 @@ namespace Visualise.Models
         public string YFormName { get; set; }
 		public List<String> XFormValues { get; set; }
 		public List<String> YFormValues { get; set; }
+
+		public int EntryCount { get; set; }
+		public string EntryCountString { get; set; }
     }
 }

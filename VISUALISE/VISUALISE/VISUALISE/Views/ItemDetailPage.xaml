@@ -17,7 +17,6 @@
 		<Editor Text="{Binding Entry.Val1}" d:Text="X entry value" x:Name="val1" FontSize="Small" Margin="0" />
 		<Label Text="{Binding Form.YFormName}" FontSize="Medium" />
 		<Editor Text="{Binding Entry.Val2}" d:Text="Y entry value" x:Name="val2" FontSize="Small" Margin="0" />
-		<Label Text="{Binding Form.XFormValues}" FontSize="Medium" />
     </StackLayout>
     
 </ContentPage>
