@@ -15,7 +15,7 @@ namespace Visualise.Services
             forms = new List<Form>();
             var mockForms = new List<Form>
             {
-                new Form { Id = Guid.NewGuid().ToString(), ChartName = "Spending Tracker", ChartDescription = "Track how much you spend on various categories (Example)", XFormName="Money Spent", YFormName="Category" },
+                new Form { Id = Guid.NewGuid().ToString(), ChartName = "Spending Tracker", ChartDescription = "Track how much you spend on various categories (Example)", XFormName="Amount Spent", YFormName="Category" },
             };
 
             foreach (var form in mockForms)

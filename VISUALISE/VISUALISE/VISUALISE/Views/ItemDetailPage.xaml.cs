@@ -26,11 +26,7 @@ namespace Visualise.Views
         {
             InitializeComponent();
 
-            var form = new Form
-            {
-                ChartName = "Test",
-                ChartDescription = "This is chart description."
-            };
+			var form = new Form();
 
             viewModel = new ItemDetailViewModel(form);
             BindingContext = viewModel;

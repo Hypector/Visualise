@@ -5,13 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Visualise.Views.ItemDetailPage"
-             Title="{Binding Title}">
+             Title="Add Entry">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small"/>
+		<Label Text="{Binding Form.XFormName}" FontSize="Medium" />
+		<Entry d:Text="XFormName" FontSize="Small" />
+		<Label Text="{Binding Form.YFormName}" FontSize="Medium" />
+		<Entry d:Text="YFormName" FontSize="Small" />
     </StackLayout>
     
 </ContentPage>
