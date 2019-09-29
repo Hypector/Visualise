@@ -12,9 +12,8 @@ namespace Visualise
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+			DependencyService.Register<MockDataStore>();
+			MainPage = new AppShell();
         }
 
         protected override void OnStart()

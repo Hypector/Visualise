@@ -4,6 +4,10 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Visualise.Android.dll" comes first in this list. */
 		"Visualise.Android.dll",
 		"FormsViewGroup.dll",
+		"OxyPlot.dll",
+		"OxyPlot.Xamarin.Android.dll",
+		"OxyPlot.Xamarin.Forms.dll",
+		"OxyPlot.Xamarin.Forms.Platform.Android.dll",
 		"Visualise.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
