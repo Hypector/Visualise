@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Visualise.Views.NewItemPage"
-             Title="New Item">
+             Title="New Form">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
@@ -14,10 +14,14 @@
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Label Text="Chart Name" FontSize="Medium" />
+            <Entry Text="{Binding Form.ChartName}" d:Text="Chart name" FontSize="Small" />
+            <Label Text="Chart Description" FontSize="Medium" />
+            <Editor Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
+            <Label Text="X Value Name" FontSize="Medium" />
+            <Editor Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
+            <Label Text="Y Value Name" FontSize="Medium" />
+            <Editor Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
     

@@ -6,10 +6,10 @@ namespace Visualise.Services
 {
     public interface IDataStore<T>
     {
-        Task<bool> AddItemAsync(T item);
-        Task<bool> UpdateItemAsync(T item);
-        Task<bool> DeleteItemAsync(string id);
-        Task<T> GetItemAsync(string id);
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<bool> AddFormAsync(T form);
+        Task<bool> UpdateFormAsync(T form);
+        Task<bool> DeleteFormAsync(string id);
+        Task<T> GetFormAsync(string id);
+        Task<IEnumerable<T>> GetFormsAsync(bool forceRefresh = false);
     }
 }

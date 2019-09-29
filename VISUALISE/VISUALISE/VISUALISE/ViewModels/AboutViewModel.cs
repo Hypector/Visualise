@@ -9,7 +9,7 @@ namespace Visualise.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Charts";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }

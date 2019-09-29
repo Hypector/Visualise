@@ -26,13 +26,13 @@ namespace Visualise.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var form = new Form
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                ChartName = "Test",
+                ChartDescription = "This is chart description."
             };
 
-            viewModel = new ItemDetailViewModel(item);
+            viewModel = new ItemDetailViewModel(form);
             BindingContext = viewModel;
         }
     }

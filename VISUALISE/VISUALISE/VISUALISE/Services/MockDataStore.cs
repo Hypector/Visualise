@@ -6,61 +6,56 @@ using Visualise.Models;
 
 namespace Visualise.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Form>
     {
-        List<Item> items;
+        List<Form> forms;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            forms = new List<Form>();
+            var mockForms = new List<Form>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Form { Id = Guid.NewGuid().ToString(), ChartName = "Spending Tracker", ChartDescription = "Track how much you spend on various categories (Example)", XFormName="Money Spent", YFormName="Category" },
             };
 
-            foreach (var item in mockItems)
+            foreach (var form in mockForms)
             {
-                items.Add(item);
+                forms.Add(form);
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddFormAsync(Form form)
         {
-            items.Add(item);
+            forms.Add(form);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateFormAsync(Form form)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldForm = forms.Where((Form arg) => arg.Id == form.Id).FirstOrDefault();
+            forms.Remove(oldForm);
+            forms.Add(form);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteFormAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldForm = forms.Where((Form arg) => arg.Id == id).FirstOrDefault();
+            forms.Remove(oldForm);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Form> GetFormAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(forms.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Form>> GetFormsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(forms);
         }
     }
 }

@@ -6,11 +6,11 @@ namespace Visualise.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public Form Form { get; set; }
+        public ItemDetailViewModel(Form form = null)
         {
-            Title = item?.Text;
-            Item = item;
+            Title = form?.ChartName;
+            Form = form;
         }
     }
 }
