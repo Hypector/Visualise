@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Visualise.Views.ChartPage"
-             Title="Add Entry">
+             Title="{Binding Form.ChartName}">
 
     <StackLayout Spacing="20" Padding="15">
 		<Label Text="{Binding Form.XFormName}" FontSize="Medium" />

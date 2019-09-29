@@ -22,6 +22,8 @@ namespace Visualise.Views
 			Form = new Form();
 			Form.XFormValues = new List<String>();
 			Form.YFormValues = new List<String>();
+			Form.EntryCount = 0;
+			Form.EntryCountString = "No entries";
 
             BindingContext = this;
         }
