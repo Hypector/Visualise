@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using Visualise.Models;
 using Visualise.Views;
+using Entry = Visualise.Models.Entry;
 
 namespace Visualise.ViewModels
 {
@@ -26,6 +27,20 @@ namespace Visualise.ViewModels
                 var newForm = form as Form;
                 Forms.Add(newForm);
                 await DataStore.AddFormAsync(newForm);
+            });
+
+            MessagingCenter.Subscribe<ItemDetailPage, Entry>(this, "AddEntry", async (obj, entry) =>
+            {
+				var newEntry = entry as Entry;
+				Form form = await DataStore.GetFormAsync(newEntry.FormID);
+				form.XFormValues.Add(entry.Val1);
+				form.YFormValues.Add(entry.Val2);
+				Console.WriteLine("=========================================================");
+				Console.WriteLine("=========================================================");
+				await DataStore.UpdateFormAsync(form);
+
+//                Forms.Add(newForm);
+//               await DataStore.AddFormAsync(newForm);
             });
         }
 

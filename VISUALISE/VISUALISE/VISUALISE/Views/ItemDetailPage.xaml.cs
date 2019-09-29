@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using Visualise.Models;
 using Visualise.ViewModels;
+using Entry = Visualise.Models.Entry;
 
 namespace Visualise.Views
 {
@@ -14,25 +15,32 @@ namespace Visualise.Views
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel;
-		public string[] Entry;
+        public Form Form { get; set; }
+        public Entry Entry { get; set; }
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
+			Entry = viewModel.Entry;
         }
 
-        public ItemDetailPage()
+		public ItemDetailPage()
         {
             InitializeComponent();
-			var form = new Form();
+			Form = new Form();
+			Entry = new Entry
+			{
+				FormID = Form.Id
+			};
 
-            viewModel = new ItemDetailViewModel(form);
+            viewModel = new ItemDetailViewModel(Form);
             BindingContext = viewModel;
         }
         async void Save_Clicked(object sender, EventArgs e)
         {
+            MessagingCenter.Send(this, "AddEntry", Entry);
 			await Navigation.PopModalAsync();
 		}
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Visualise.Models
 {
@@ -9,7 +10,7 @@ namespace Visualise.Models
         public string ChartDescription { get; set; }
         public string XFormName { get; set; }
         public string YFormName { get; set; }
-		public Array XFormValues { get; set; }
-		public Array YFormValues { get; set; }
+		public List<String> XFormValues { get; set; }
+		public List<String> YFormValues { get; set; }
     }
 }
