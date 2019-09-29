@@ -14,6 +14,7 @@ namespace Visualise.Views
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel;
+		public string[] Entry;
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
@@ -25,11 +26,19 @@ namespace Visualise.Views
         public ItemDetailPage()
         {
             InitializeComponent();
-
 			var form = new Form();
 
             viewModel = new ItemDetailViewModel(form);
             BindingContext = viewModel;
+        }
+        async void Save_Clicked(object sender, EventArgs e)
+        {
+			await Navigation.PopModalAsync();
+		}
+
+		async void Cancel_Clicked(object sender, EventArgs e)
+        {
+			await Navigation.PopModalAsync();
         }
     }
 }

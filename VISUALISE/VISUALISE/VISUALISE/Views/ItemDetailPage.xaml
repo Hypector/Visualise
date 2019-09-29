@@ -7,6 +7,11 @@
              x:Class="Visualise.Views.ItemDetailPage"
              Title="Add Entry">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <StackLayout Spacing="20" Padding="15">
 		<Label Text="{Binding Form.XFormName}" FontSize="Medium" />
 		<Entry d:Text="XFormName" FontSize="Small" />

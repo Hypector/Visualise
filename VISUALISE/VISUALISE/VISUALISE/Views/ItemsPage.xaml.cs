@@ -23,7 +23,6 @@ namespace Visualise.Views
         public ItemsPage()
         {
             InitializeComponent();
-
             BindingContext = viewModel = new ItemsViewModel();
         }
 
@@ -33,7 +32,7 @@ namespace Visualise.Views
             if (form == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(form)));
+            await Navigation.PushModalAsync(new NavigationPage(new ItemDetailPage(new ItemDetailViewModel(form))));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

@@ -20,6 +20,8 @@ namespace Visualise.Views
             InitializeComponent();
 
 			Form = new Form();
+			Form.XFormValues = new string[0];
+			Form.YFormValues = new string[0];
 
             BindingContext = this;
         }

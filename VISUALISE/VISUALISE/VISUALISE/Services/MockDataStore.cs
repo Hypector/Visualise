@@ -13,9 +13,11 @@ namespace Visualise.Services
         public MockDataStore()
         {
             forms = new List<Form>();
-            var mockForms = new List<Form>
+			string[] xArray = new string[0];
+			string[] yArray = new string[0];
+			var mockForms = new List<Form>
             {
-                new Form { Id = Guid.NewGuid().ToString(), ChartName = "Spending Tracker", ChartDescription = "Track how much you spend on various categories (Example)", XFormName="Amount Spent", YFormName="Category" },
+                new Form { Id = Guid.NewGuid().ToString(), ChartName = "Spending Tracker", ChartDescription = "Track how much you spend on various categories (Example)", XFormName="Amount Spent", YFormName="Category", XFormValues=xArray, YFormValues=yArray },
             };
 
             foreach (var form in mockForms)
