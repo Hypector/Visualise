@@ -43,6 +43,11 @@ namespace Visualise.ViewModels
 				StartAngle = 0
 			};
 
+			var ls = new LineSeries
+			{
+				StrokeThickness = .25
+			};
+
 			// TODO for after MVP ------ optional graph choices
 			List<String> xVals = Form.XFormValues;
 			List<String> yVals = Form.YFormValues;
@@ -71,9 +76,6 @@ namespace Visualise.ViewModels
 								ignoreIndexes.Add(j);	
 							}
 						}
-						Console.WriteLine("============================");
-						Console.WriteLine(total);
-						Console.WriteLine("============================");
 						data.Add(new Data(xVals[i].ToString(), total.ToString()));
 					}
 				}
@@ -103,9 +105,6 @@ namespace Visualise.ViewModels
 								ignoreIndexes.Add(j);	
 							}
 						}
-						Console.WriteLine("==**8*=8=8=8=8=8=8=8=8======");
-						Console.WriteLine(total);
-						Console.WriteLine("8=8==88=8=8=8=8=8==88=8==88=");
 						data.Add(new Data(total.ToString(), yVals[i].ToString()));
 					}
 				}
@@ -119,9 +118,15 @@ namespace Visualise.ViewModels
 			// line/plot
 			} else
 			{
-
+				for (int i = 0; i < xVals.Count; i++)
+				{
+					ls.Points.Add(new DataPoint(Double.Parse(xVals[i]), Double.Parse(yVals[i])));
+				}
+				model.Series.Add(ls);
+				return model;
 			}
 
+			// default lol -- todo add error message
 			ps.Slices.Add(new PieSlice("Asia", 900));
 			ps.Slices.Add(new PieSlice("Europe", 739) { IsExploded = false });
 			ps.Slices.Add(new PieSlice("Oceania", 500) { IsExploded = false });
