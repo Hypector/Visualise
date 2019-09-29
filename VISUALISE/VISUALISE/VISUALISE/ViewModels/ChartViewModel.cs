@@ -125,13 +125,6 @@ namespace Visualise.ViewModels
 				model.Series.Add(ls);
 				return model;
 			}
-
-			// default lol -- todo add error message
-			ps.Slices.Add(new PieSlice("Asia", 900));
-			ps.Slices.Add(new PieSlice("Europe", 739) { IsExploded = false });
-			ps.Slices.Add(new PieSlice("Oceania", 500) { IsExploded = false });
-			model.Series.Add(ps);
-			return model;
 		}
 	}
 }
