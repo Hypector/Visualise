@@ -1,4 +1,4 @@
-﻿using OxyPlot;
+using OxyPlot;
 using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
@@ -52,77 +52,84 @@ namespace Visualise.ViewModels
 			List<String> xVals = Form.XFormValues;
 			List<String> yVals = Form.YFormValues;
 
-			// decide what kind of graph -> (string, int) = pie... (int, int) and (string, string) = line/plot
-			// (assuming all values have the same type) -- TODO after MVP is add strict type checking and form customization
-			bool isXInt = Int32.TryParse(xVals[0], out int a);
-			bool isYInt = Int32.TryParse(yVals[0], out int b);
+			if (xVals.Count > 0 && yVals.Count > 0)
+				{
 
-			// ========= normalise the values ===========
-			// pie where x = category and y = value
-			if (!isXInt && isYInt)
-			{
-				List<Data> data = new List<Data>();
-				List<Int32> ignoreIndexes = new List<Int32>();
-				for (int i = 0; i < xVals.Count; i++)
-				{
-					if (!ignoreIndexes.Contains(i))
-					{
-						int total = Int32.Parse(yVals[i]);
-						for (int j = i + 1; j < yVals.Count; j++) 
-						{
-							if (xVals[j] == xVals[i])
-							{
-								total += Int32.Parse(yVals[j]);
-								ignoreIndexes.Add(j);	
-							}
-						}
-						data.Add(new Data(xVals[i].ToString(), total.ToString()));
-					}
-				}
+				// decide what kind of graph -> (string, int) = pie... (int, int) and (string, string) = line/plot
+				// (assuming all values have the same type) -- TODO after MVP is add strict type checking and form customization
+				bool isXInt = Int32.TryParse(xVals[0], out int a);
+				bool isYInt = Int32.TryParse(yVals[0], out int b);
 
-				// Create the graph
-				foreach (Data key in data)
+				// ========= normalise the values ===========
+				// pie where x = category and y = value
+				if (!isXInt && isYInt)
 				{
-					ps.Slices.Add(new PieSlice(key.XVal, Double.Parse(key.YVal)));
-				}
-				model.Series.Add(ps);
-				return model;
-			// pie where y = category and x = value
-			} else if (isXInt && !isYInt)
-			{
-				List<Data> data = new List<Data>();
-				List<Int32> ignoreIndexes = new List<Int32>();
-				for (int i = 0; i < yVals.Count; i++)
-				{
-					if (!ignoreIndexes.Contains(i))
+					List<Data> data = new List<Data>();
+					List<Int32> ignoreIndexes = new List<Int32>();
+					for (int i = 0; i < xVals.Count; i++)
 					{
-						int total = Int32.Parse(xVals[i]);
-						for (int j = i + 1; j < xVals.Count; j++) 
+						if (!ignoreIndexes.Contains(i))
 						{
-							if (yVals[j] == yVals[i])
+							int total = Int32.Parse(yVals[i]);
+							for (int j = i + 1; j < yVals.Count; j++) 
 							{
-								total += Int32.Parse(xVals[j]);
-								ignoreIndexes.Add(j);	
+								if (xVals[j] == xVals[i])
+								{
+									total += Int32.Parse(yVals[j]);
+									ignoreIndexes.Add(j);	
+								}
 							}
+							data.Add(new Data(xVals[i].ToString(), total.ToString()));
 						}
-						data.Add(new Data(total.ToString(), yVals[i].ToString()));
 					}
-				}
-				// Create the graph
-				foreach (Data key in data)
+
+					// Create the graph
+					foreach (Data key in data)
+					{
+						ps.Slices.Add(new PieSlice(key.XVal, Double.Parse(key.YVal)));
+					}
+					model.Series.Add(ps);
+					return model;
+				// pie where y = category and x = value
+				} else if (isXInt && !isYInt)
 				{
-					ps.Slices.Add(new PieSlice(key.YVal, Double.Parse(key.XVal)));
+					List<Data> data = new List<Data>();
+					List<Int32> ignoreIndexes = new List<Int32>();
+					for (int i = 0; i < yVals.Count; i++)
+					{
+						if (!ignoreIndexes.Contains(i))
+						{
+							int total = Int32.Parse(xVals[i]);
+							for (int j = i + 1; j < xVals.Count; j++) 
+							{
+								if (yVals[j] == yVals[i])
+								{
+									total += Int32.Parse(xVals[j]);
+									ignoreIndexes.Add(j);	
+								}
+							}
+							data.Add(new Data(total.ToString(), yVals[i].ToString()));
+						}
+					}
+					// Create the graph
+					foreach (Data key in data)
+					{
+						ps.Slices.Add(new PieSlice(key.YVal, Double.Parse(key.XVal)));
+					}
+					model.Series.Add(ps);
+					return model;
+				// line/plot
+				} else
+				{
+					for (int i = 0; i < xVals.Count; i++)
+					{
+						ls.Points.Add(new DataPoint(Double.Parse(xVals[i]), Double.Parse(yVals[i])));
+					}
+					model.Series.Add(ls);
+					return model;
 				}
-				model.Series.Add(ps);
-				return model;
-			// line/plot
 			} else
 			{
-				for (int i = 0; i < xVals.Count; i++)
-				{
-					ls.Points.Add(new DataPoint(Double.Parse(xVals[i]), Double.Parse(yVals[i])));
-				}
-				model.Series.Add(ls);
 				return model;
 			}
 		}
