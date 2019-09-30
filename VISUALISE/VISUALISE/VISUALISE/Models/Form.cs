@@ -9,7 +9,9 @@ namespace Visualise.Models
         public string ChartName { get; set; }
         public string ChartDescription { get; set; }
         public string XFormName { get; set; }
+        public string XFormType { get; set; }
         public string YFormName { get; set; }
+        public string YFormType { get; set; }
 		public List<String> XFormValues { get; set; }
 		public List<String> YFormValues { get; set; }
 

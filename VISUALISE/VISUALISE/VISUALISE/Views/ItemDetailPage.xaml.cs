@@ -24,6 +24,24 @@ namespace Visualise.Views
 
             BindingContext = this.viewModel = viewModel;
 			Entry = viewModel.Entry;
+			Form = viewModel.Form;
+			
+			// type bindings
+			if (Form.XFormType == "Numeric")
+			{
+				val1.Keyboard = Keyboard.Numeric;
+			} else
+			{
+				val1.Keyboard = Keyboard.Text;
+			}
+
+			if (Form.YFormType == "Numeric")
+			{
+				val2.Keyboard = Keyboard.Numeric;
+			} else
+			{
+				val2.Keyboard = Keyboard.Text;
+			}
         }
 
 		public ItemDetailPage()
@@ -34,7 +52,6 @@ namespace Visualise.Views
 			{
 				FormID = Form.Id
 			};
-
             viewModel = new ItemDetailViewModel(Form);
             BindingContext = viewModel;
         }

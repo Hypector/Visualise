@@ -14,9 +14,9 @@
 
     <StackLayout Spacing="20" Padding="15">
 		<Label Text="{Binding Form.XFormName}" FontSize="Medium" />
-		<Editor Text="{Binding Entry.Val1}" d:Text="X entry value" x:Name="val1" FontSize="Small" Margin="0" />
+		<Entry Text="{Binding Entry.Val1}" d:Text="X entry value" x:Name="val1" FontSize="Small" Margin="0" />
 		<Label Text="{Binding Form.YFormName}" FontSize="Medium" />
-		<Editor Text="{Binding Entry.Val2}" d:Text="Y entry value" x:Name="val2" FontSize="Small" Margin="0" />
+		<Entry Text="{Binding Entry.Val2}" d:Text="Y entry value" x:Name="val2" FontSize="Small" Margin="0" />
     </StackLayout>
     
 </ContentPage>
