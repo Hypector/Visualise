@@ -15,11 +15,11 @@
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Chart Name" FontSize="Medium" />
-            <Entry Text="{Binding Form.ChartName}" d:Text="Chart name" FontSize="Small" />
+            <Entry x:Name="ChartName" Text="{Binding Form.ChartName}" d:Text="Chart name" FontSize="Small" />
             <Label Text="Chart Description" FontSize="Medium" />
-            <Entry Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
+            <Entry x:Name="Description" Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
             <Label Text="X Value Name" FontSize="Medium" />
-            <Entry Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
+            <Entry x:Name="XName" Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
             <Label Text="X Value Type" FontSize="Medium" />
 			<Picker x:Name="xpicker"
 					Title="Select a type"
@@ -33,7 +33,7 @@
 			</Picker>
 
 			<Label Text="Y Value Name" FontSize="Medium" />
-            <Entry Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
+            <Entry x:Name="YName" Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
             <Label Text="Y Value Type" FontSize="Medium" />
 			<Picker x:Name="ypicker"
 					Title="Select a type"

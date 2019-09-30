@@ -1,11 +1,14 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 
 namespace Visualise.Models
 {
     public class Form
     {
-        public int Id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int DBID { get; set; }
+        public string Id { get; set; }
         public string ChartName { get; set; }
         public string ChartDescription { get; set; }
         public string XFormName { get; set; }

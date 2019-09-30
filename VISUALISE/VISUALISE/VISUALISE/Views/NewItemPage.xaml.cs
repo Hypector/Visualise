@@ -6,6 +6,8 @@ using Xamarin.Forms.Xaml;
 
 using Visualise.Models;
 using Visualise.Data;
+using SQLite;
+using System.Diagnostics;
 
 namespace Visualise.Views
 {
@@ -31,13 +33,19 @@ namespace Visualise.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+            Form.ChartName = ChartName.Text;
+            Form.ChartDescription = Description.Text;
+            Form.XFormName = XName.Text;
+            Form.YFormName = YName.Text;
+
+
             try
             {
-                //var x = await FormsDB.SaveQuestionAsync(Form);
+                var x = await App.Database.SaveQuestionAsync(Form);
             }
-            catch
+            catch (Exception ex)
             {
-
+                Debug.WriteLine($"Sorry! There was an error: {ex.Message}");
             }
 
             MessagingCenter.Send(this, "AddForm", Form);
