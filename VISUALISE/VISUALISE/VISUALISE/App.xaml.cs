@@ -3,17 +3,34 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Visualise.Services;
 using Visualise.Views;
+using Visualise.Data;
+using System.IO;
 
 namespace Visualise
 {
     public partial class App : Application
     {
 
+        static FormsDB database;
+
+        public static FormsDB Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new FormsDB(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FormsDB.db3"));
+                }
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
-			DependencyService.Register<MockDataStore>();
-			MainPage = new AppShell();
+
+            DependencyService.Register<MockDataStore>();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

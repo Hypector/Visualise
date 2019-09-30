@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Visualise.Models;
+using Visualise.Data;
 
 namespace Visualise.Views
 {
@@ -30,6 +31,15 @@ namespace Visualise.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                //var x = await FormsDB.SaveQuestionAsync(Form);
+            }
+            catch
+            {
+
+            }
+
             MessagingCenter.Send(this, "AddForm", Form);
             await Navigation.PopModalAsync();
         }

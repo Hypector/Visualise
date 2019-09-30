@@ -5,7 +5,7 @@ namespace Visualise.Models
 {
     public class Form
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string ChartName { get; set; }
         public string ChartDescription { get; set; }
         public string XFormName { get; set; }
