@@ -33,15 +33,19 @@ namespace Visualise.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Form.ChartName = ChartName.Text;
-            Form.ChartDescription = Description.Text;
-            Form.XFormName = XName.Text;
-            Form.YFormName = YName.Text;
-
+            Form DBForm = new Form()
+            {
+                ChartName = ChartName.Text,
+                ChartDescription = Description.Text,
+                XFormName = XName.Text,
+                XFormType = xpicker.SelectedItem.ToString(),
+                YFormName = YName.Text,
+                YFormType = ypicker.SelectedItem.ToString()
+            };
 
             try
             {
-                var x = await App.Database.SaveQuestionAsync(Form);
+                var x = await App.Database.SaveAsync(DBForm);
             }
             catch (Exception ex)
             {

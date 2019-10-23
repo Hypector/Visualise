@@ -17,16 +17,16 @@ namespace Visualise.Data
             database.CreateTableAsync<Form>().Wait();
         }
 
-        //Get Question
-        public Task<Form> GetQuestionAsync(int ID)
+        //Get
+        public Task<Form> GetAsync(int ID)
         {
             return database.Table<Form>()
                 .Where(i => i.DBID == ID)
                 .FirstOrDefaultAsync();
         }
 
-        //Add Question
-        public Task<int> SaveQuestionAsync(Form form)
+        //Add
+        public Task<int> SaveAsync(Form form)
         {
             if (form.DBID != 0)
             {
@@ -38,8 +38,8 @@ namespace Visualise.Data
             }
         }
 
-        //Delete Question
-        public Task<int> DeleteQuestionAsync(Form form)
+        //Delete
+        public Task<int> DeleteAsync(Form form)
         {
             return database.DeleteAsync(form);
         }
