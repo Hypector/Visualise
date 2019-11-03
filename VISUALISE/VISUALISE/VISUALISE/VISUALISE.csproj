@@ -29,8 +29,11 @@
     <Compile Update="Views\FormListPage.xaml.cs">
       <DependentUpon>FormListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\NewFormListPage.xaml.cs">
-      <DependentUpon>NewFormListPage.xaml</DependentUpon>
+    <Compile Update="Views\HistoryListPage.xaml.cs">
+      <DependentUpon>HistoryListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewFormPage.xaml.cs">
+      <DependentUpon>NewFormPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

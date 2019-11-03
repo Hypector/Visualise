@@ -21,6 +21,11 @@ namespace Visualise.Views
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
+			Form = viewModel.Form;
+        }
+        async void History_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryListPage(new HistoryViewModel(Form)));
         }
 
 		public ChartPage()
