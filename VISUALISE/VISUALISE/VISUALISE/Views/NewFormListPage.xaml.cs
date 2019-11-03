@@ -37,7 +37,14 @@ namespace Visualise.Views
             Form.ChartDescription = Description.Text;
             Form.XFormName = XName.Text;
             Form.YFormName = YName.Text;
-
+			
+			if (ChartType.SelectedItem.ToString() == "Pie")
+			{
+				Form.XFormType = "Text";
+				Form.YFormType = "Numeric";
+			} else if (ChartType.SelectedItem.ToString() == "Line")
+				Form.XFormType = "Numeric";
+				Form.YFormType = "Numeric";
 
             try
             {

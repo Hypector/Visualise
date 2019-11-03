@@ -16,36 +16,24 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Chart Name" FontSize="Medium" />
             <Entry x:Name="ChartName" Text="{Binding Form.ChartName}" d:Text="Chart name" FontSize="Small" />
+            <Label Text="Chart Type" FontSize="Medium" />
+			<Picker x:Name="ChartType"
+					Title="Select a chart type"
+					>
+				<Picker.ItemsSource>
+				<x:Array Type="{x:Type x:String}">
+					<x:String>Line</x:String>
+					<x:String>Pie</x:String>
+				</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
             <Label Text="Chart Description" FontSize="Medium" />
             <Entry x:Name="Description" Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
             <Label Text="X Value Name" FontSize="Medium" />
             <Entry x:Name="XName" Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
-            <Label Text="X Value Type" FontSize="Medium" />
-			<Picker x:Name="xpicker"
-					Title="Select a type"
-					SelectedItem="{Binding Form.XFormType}">
-				<Picker.ItemsSource>
-				<x:Array Type="{x:Type x:String}">
-					<x:String>Text</x:String>
-					<x:String>Numeric</x:String>
-				</x:Array>
-				</Picker.ItemsSource>
-			</Picker>
 
 			<Label Text="Y Value Name" FontSize="Medium" />
             <Entry x:Name="YName" Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
-            <Label Text="Y Value Type" FontSize="Medium" />
-			<Picker x:Name="ypicker"
-					Title="Select a type"
-					SelectedItem="{Binding Form.YFormType}"
-					>
-				<Picker.ItemsSource>
-				<x:Array Type="{x:Type x:String}">
-					<x:String>Text</x:String>
-					<x:String>Numeric</x:String>
-				</x:Array>
-				</Picker.ItemsSource>
-			</Picker>
         </StackLayout>
     </ContentPage.Content>
     
