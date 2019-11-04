@@ -9,6 +9,7 @@
              Title="{Binding Form.ChartName}">
 		<ContentPage.ToolbarItems>
 			<ToolbarItem Text="History" Clicked="History_Clicked" />
+			<ToolbarItem Text="Remove" Clicked="Remove_Clicked" />
 		</ContentPage.ToolbarItems>
 		<AbsoluteLayout Padding="15, 15, 15, 15">
 			<oxy:PlotView Model="{Binding Graph}"  

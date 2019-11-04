@@ -57,8 +57,14 @@ namespace Visualise.Views
         }
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddEntry", Entry);
-			await Navigation.PopModalAsync();
+			if (string.IsNullOrEmpty(Entry.Val1) || string.IsNullOrEmpty(Entry.Val2))
+			{
+				await DisplayAlert("Error", "Please fill out all the fields before saving", "OK");
+			} else
+			{
+				MessagingCenter.Send(this, "AddEntry", Entry);
+				await Navigation.PopModalAsync();
+			}
 		}
 
 		async void Cancel_Clicked(object sender, EventArgs e)

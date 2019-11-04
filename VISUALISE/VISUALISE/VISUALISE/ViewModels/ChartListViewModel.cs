@@ -20,11 +20,11 @@ namespace Visualise.ViewModels
             Forms = new ObservableCollection<Form>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewFormPage, Form>(this, "AddForm", async (obj, form) =>
+            MessagingCenter.Subscribe<ChartPage, Form>(this, "RemoveForm", async (obj, form) =>
             {
                 var newForm = form as Form;
-                Forms.Add(newForm);
-                await DataStore.AddFormAsync(newForm);
+                Forms.Remove(newForm);
+                await DataStore.DeleteFormAsync(newForm.Id);
             });
         }
 

@@ -29,6 +29,13 @@ namespace Visualise.ViewModels
                 await DataStore.AddFormAsync(newForm);
             });
 
+            MessagingCenter.Subscribe<ChartPage, Form>(this, "RemoveForm", async (obj, form) =>
+            {
+                var newForm = form as Form;
+                Forms.Remove(newForm);
+                await DataStore.DeleteFormAsync(newForm.Id);
+            });
+
             MessagingCenter.Subscribe<DataEntryPage, Entry>(this, "AddEntry", async (obj, entry) =>
             {
 				var newEntry = entry as Entry;
