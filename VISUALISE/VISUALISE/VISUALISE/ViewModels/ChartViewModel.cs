@@ -3,6 +3,7 @@ using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
 using Visualise.Models;
+using Visualise.Services;
 using Visualise.Views;
 using Xamarin.Forms;
 
@@ -20,8 +21,9 @@ namespace Visualise.ViewModels
 		public string XVal { get; private set; }
 		public string YVal { get; private set; }
 	}
-    public class ChartViewModel : BaseViewModel
-    {
+
+	public class ChartViewModel : BaseViewModel
+	{
 		public Form Form { get; set; }
 		public PlotModel Graph { get; set; }
 		public ChartViewModel(Form form = null)
@@ -48,7 +50,6 @@ namespace Visualise.ViewModels
 				StrokeThickness = .25
 			};
 
-			// TODO for after MVP ------ optional graph choices
 			List<String> xVals = Form.XFormValues;
 			List<String> yVals = Form.YFormValues;
 
@@ -56,7 +57,6 @@ namespace Visualise.ViewModels
 				{
 
 				// decide what kind of graph -> (string, int) = pie... (int, int) and (string, string) = line/plot
-				// (assuming all values have the same type) -- TODO after MVP is add strict type checking and form customization
 				bool isXInt = Int32.TryParse(xVals[0], out int a);
 				bool isYInt = Int32.TryParse(yVals[0], out int b);
 
@@ -88,6 +88,9 @@ namespace Visualise.ViewModels
 					{
 						ps.Slices.Add(new PieSlice(key.XVal, Double.Parse(key.YVal)));
 					}
+					ps.OutsideLabelFormat = "";
+					ps.TickHorizontalLength = 0.00;
+					ps.TickRadialLength = 0.00;
 					model.Series.Add(ps);
 					return model;
 				// pie where y = category and x = value
@@ -116,6 +119,9 @@ namespace Visualise.ViewModels
 					{
 						ps.Slices.Add(new PieSlice(key.YVal, Double.Parse(key.XVal)));
 					}
+					ps.OutsideLabelFormat = "";
+					ps.TickHorizontalLength = 0.00;
+					ps.TickRadialLength = 0.00;
 					model.Series.Add(ps);
 					return model;
 				// line/plot

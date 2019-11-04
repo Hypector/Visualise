@@ -33,30 +33,36 @@ namespace Visualise.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Form.ChartName = ChartName.Text;
-            Form.ChartDescription = Description.Text;
-            Form.XFormName = XName.Text;
-            Form.YFormName = YName.Text;
-			
-			if (ChartType.SelectedItem.ToString() == "Pie")
+			if (string.IsNullOrEmpty(ChartName.Text) || string.IsNullOrEmpty(Description.Text) || string.IsNullOrEmpty(YName.Text) || string.IsNullOrEmpty(XName.Text) || string.IsNullOrEmpty(ChartType.SelectedItem.ToString()))
 			{
-				Form.XFormType = "Text";
-				Form.YFormType = "Numeric";
-			} else if (ChartType.SelectedItem.ToString() == "Line")
-				Form.XFormType = "Numeric";
-				Form.YFormType = "Numeric";
+				await DisplayAlert("Error", "Please fill out all the fields before saving", "OK");
+			} else
+			{
+				Form.ChartName = ChartName.Text;
+				Form.ChartDescription = Description.Text;
+				Form.XFormName = XName.Text;
+				Form.YFormName = YName.Text;
+				
+				if (ChartType.SelectedItem.ToString() == "Pie")
+				{
+					Form.XFormType = "Text";
+					Form.YFormType = "Numeric";
+				} else if (ChartType.SelectedItem.ToString() == "Line")
+					Form.XFormType = "Numeric";
+					Form.YFormType = "Numeric";
 
-            try
-            {
-                var x = await App.Database.SaveQuestionAsync(Form);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Sorry! There was an error: {ex.Message}");
-            }
+				try
+				{
+					var x = await App.Database.SaveQuestionAsync(Form);
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine($"Sorry! There was an error: {ex.Message}");
+				}
 
-            MessagingCenter.Send(this, "AddForm", Form);
-            await Navigation.PopModalAsync();
+				MessagingCenter.Send(this, "AddForm", Form);
+				await Navigation.PopModalAsync();
+			}
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
