@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using Visualise.Models;
 using Visualise.ViewModels;
 using SQLite;
+using Visualise.Services;
 
 namespace Visualise.Views
 {
@@ -15,19 +16,43 @@ namespace Visualise.Views
     public partial class ChartPage : ContentPage
     {
         ChartViewModel viewModel;
-        public FormModel Form { get; set; }
+        public Form Form { get; set; }
+		private bool _canRemove = true;
+        public IDataStore<Form> DataStore => DependencyService.Get<IDataStore<Form>>() ?? new MockDataStore();
 
         public ChartPage(ChartViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
+			Form = viewModel.Form;
+        }
+        async void History_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryListPage(new HistoryViewModel(Form)));
+        }
+        async void Remove_Clicked(object sender, EventArgs e)
+        {
+			if (_canRemove)
+			{
+				var answer = await DisplayAlert("Remove", "Do you want to remove this chart?", "Yes", "No");
+				if (answer)
+				{
+					_canRemove = false;
+					Remove_Clicked(true, System.EventArgs.Empty);
+				}
+			} else
+			{
+				MessagingCenter.Send(this, "RemoveForm", Form);
+				await Navigation.PopAsync();
+			}
+
         }
 
 		public ChartPage()
         {
             InitializeComponent();
-			Form = new FormModel();
+			Form = new Form();
 
             using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
             {

@@ -9,22 +9,22 @@ using Xamarin.Forms;
 
 namespace Visualise.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class ChartListViewModel : BaseViewModel
     {
         public ObservableCollection<Form> Forms { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public AboutViewModel()
+        public ChartListViewModel()
         {
             Title = "Charts";
             Forms = new ObservableCollection<Form>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Form>(this, "AddForm", async (obj, form) =>
+            MessagingCenter.Subscribe<ChartPage, Form>(this, "RemoveForm", async (obj, form) =>
             {
                 var newForm = form as Form;
-                Forms.Add(newForm);
-                await DataStore.AddFormAsync(newForm);
+                Forms.Remove(newForm);
+                await DataStore.DeleteFormAsync(newForm.Id);
             });
         }
 

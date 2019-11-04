@@ -11,25 +11,32 @@ using Entry = Visualise.Models.Entry;
 
 namespace Visualise.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class FormListViewModel : BaseViewModel
     {
         public ObservableCollection<Form> Forms { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public FormListViewModel()
         {
             Title = "Forms";
             Forms = new ObservableCollection<Form>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Form>(this, "AddForm", async (obj, form) =>
+            MessagingCenter.Subscribe<NewFormPage, Form>(this, "AddForm", async (obj, form) =>
             {
                 var newForm = form as Form;
                 Forms.Add(newForm);
                 await DataStore.AddFormAsync(newForm);
             });
 
-            MessagingCenter.Subscribe<ItemDetailPage, Entry>(this, "AddEntry", async (obj, entry) =>
+            MessagingCenter.Subscribe<ChartPage, Form>(this, "RemoveForm", async (obj, form) =>
+            {
+                var newForm = form as Form;
+                Forms.Remove(newForm);
+                await DataStore.DeleteFormAsync(newForm.Id);
+            });
+
+            MessagingCenter.Subscribe<DataEntryPage, Entry>(this, "AddEntry", async (obj, entry) =>
             {
 				var newEntry = entry as Entry;
 				Form form = await DataStore.GetFormAsync(newEntry.FormID);

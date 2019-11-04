@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Visualise.ViewModels"
              mc:Ignorable="d"
-             x:Class="Visualise.Views.NewItemPage"
+             x:Class="Visualise.Views.NewFormPage"
              Title="New Form">
     
     <ContentPage.ToolbarItems>
@@ -22,6 +22,7 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Chart Name" FontSize="Medium" />
             <Entry x:Name="ChartName" Text="{Binding Form.ChartName}" d:Text="Chart name" FontSize="Small" />
+<<<<<<< HEAD:VISUALISE/VISUALISE/VISUALISE/Views/NewItemPage.xaml
             <Label Text="Chart Description" FontSize="Medium" />
             <Entry x:Name="Description" Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
 
@@ -44,6 +45,26 @@
             <Label Text="Y Axis Name" IsVisible="{Binding IsLineGraph}" FontSize="Medium" />
             <Entry x:Name="YName" IsVisible="{Binding IsLineGraph}" Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
             
+=======
+            <Label Text="Chart Type" FontSize="Medium" />
+			<Picker x:Name="ChartType"
+					Title="Select a chart type"
+					>
+				<Picker.ItemsSource>
+				<x:Array Type="{x:Type x:String}">
+					<x:String>Line</x:String>
+					<x:String>Pie</x:String>
+				</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
+            <Label Text="Chart Description" FontSize="Medium" />
+            <Entry x:Name="Description" Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
+            <Label Text="X Value Name" FontSize="Medium" />
+            <Entry x:Name="XName" Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
+
+			<Label Text="Y Value Name" FontSize="Medium" />
+            <Entry x:Name="YName" Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
+>>>>>>> master:VISUALISE/VISUALISE/VISUALISE/Views/NewFormPage.xaml
         </StackLayout>
     </ContentPage.Content>
     

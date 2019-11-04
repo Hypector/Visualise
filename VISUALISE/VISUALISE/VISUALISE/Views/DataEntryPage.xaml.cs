@@ -13,13 +13,19 @@ namespace Visualise.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class ItemDetailPage : ContentPage
+    public partial class DataEntryPage : ContentPage
     {
+<<<<<<< HEAD:VISUALISE/VISUALISE/VISUALISE/Views/ItemDetailPage.xaml.cs
         ItemDetailViewModel viewModel;
         public FormModel Form { get; set; }
         public EntryModel Entry { get; set; }
+=======
+        DataEntryViewModel viewModel;
+        public Form Form { get; set; }
+        public Entry Entry { get; set; }
+>>>>>>> master:VISUALISE/VISUALISE/VISUALISE/Views/DataEntryPage.xaml.cs
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public DataEntryPage(DataEntryViewModel viewModel)
         {
             InitializeComponent();
 
@@ -38,7 +44,7 @@ namespace Visualise.Views
 			val2.Keyboard = Keyboard.Numeric;
         }
 
-		public ItemDetailPage()
+		public DataEntryPage()
         {
             InitializeComponent();
 			Form = new FormModel();
@@ -46,11 +52,12 @@ namespace Visualise.Views
             {
                 FormID = Form.DBID
 			};
-            viewModel = new ItemDetailViewModel(Form);
+            viewModel = new DataEntryViewModel(Form);
             BindingContext = viewModel;
         }
         async void Save_Clicked(object sender, EventArgs e)
         {
+<<<<<<< HEAD:VISUALISE/VISUALISE/VISUALISE/Views/ItemDetailPage.xaml.cs
             EntryModel DBEntry = new EntryModel()
             {
                 FormID = Form.DBID,
@@ -75,6 +82,17 @@ namespace Visualise.Views
 
             await Navigation.PopModalAsync();
         }
+=======
+			if (string.IsNullOrEmpty(Entry.Val1) || string.IsNullOrEmpty(Entry.Val2))
+			{
+				await DisplayAlert("Error", "Please fill out all the fields before saving", "OK");
+			} else
+			{
+				MessagingCenter.Send(this, "AddEntry", Entry);
+				await Navigation.PopModalAsync();
+			}
+		}
+>>>>>>> master:VISUALISE/VISUALISE/VISUALISE/Views/DataEntryPage.xaml.cs
 
 		async void Cancel_Clicked(object sender, EventArgs e)
         {

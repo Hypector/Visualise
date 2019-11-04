@@ -5,13 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 NavigationPage.HasBackButton="False"
              mc:Ignorable="d"
-             x:Class="Visualise.Views.ItemsPage"
+             x:Class="Visualise.Views.AboutPage"
              Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddForm_Clicked" />
-    </ContentPage.ToolbarItems>
+             x:Name="BrowseAboutPage">
 
     <StackLayout>
         <ListView x:Name="FormListView"
@@ -22,7 +18,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
+        
         <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Forms}"
                 VerticalOptions="FillAndExpand"
@@ -32,16 +28,6 @@
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
-            <d:ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>First Item</x:String>
-                    <x:String>Second Item</x:String>
-                    <x:String>Third Item</x:String>
-                    <x:String>Forth Item</x:String>
-                    <x:String>Fifth Item</x:String>
-                    <x:String>Sixth Item</x:String>
-                </x:Array>
-            </d:ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -51,7 +37,7 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding ChartDescription}"
+                            <Label Text="{Binding EntryCountString}"
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
@@ -61,7 +47,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
     </StackLayout>
 
 </ContentPage>
