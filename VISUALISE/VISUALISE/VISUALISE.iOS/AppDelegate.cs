@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -25,7 +26,12 @@ namespace Visualise.iOS
             global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init();
 			OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
-			LoadApplication(new App());
+
+            string fileName = "FormsDB.db3";
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library");
+            string completePath = Path.Combine(folderPath, fileName);
+
+            LoadApplication(new App(completePath));
 
             return base.FinishedLaunching(app, options);
 		}

@@ -10,6 +10,15 @@
              x:Name="BrowseAboutPage">
 
     <StackLayout>
+        <ListView x:Name="FormListView"
+                ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding ChartName}" Detail="{Binding ChartDescription}" TextColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
         <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Forms}"
                 VerticalOptions="FillAndExpand"

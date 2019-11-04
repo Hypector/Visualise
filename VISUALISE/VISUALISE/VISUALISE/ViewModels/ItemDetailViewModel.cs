@@ -10,15 +10,15 @@ namespace Visualise.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-		public Form Form { get; set; }
-		public Entry Entry { get; set; }
-        public ItemDetailViewModel(Form form = null)
+		public FormModel Form { get; set; }
+		public EntryModel Entry { get; set; }
+        public ItemDetailViewModel(FormModel form = null)
         {
             Title = form?.ChartName;
             Form = form;
-			Entry = new Entry
+			Entry = new EntryModel
 			{
-				FormID = Form.Id
+				FormID = Form.DBID
 			};
 		}
     }

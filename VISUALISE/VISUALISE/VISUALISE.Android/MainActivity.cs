@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
 
 namespace Visualise.Droid
 {
@@ -23,7 +24,12 @@ namespace Visualise.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 			OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            string fileName = "FormsDB.db3";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string completePath = Path.Combine(folderPath, fileName);
+
+            LoadApplication(new App(completePath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

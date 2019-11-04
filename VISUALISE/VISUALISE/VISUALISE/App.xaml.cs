@@ -13,6 +13,8 @@ namespace Visualise
 
         static FormsDB database;
 
+        public static string FilePath;
+
         public static FormsDB Database
         {
             get
@@ -25,12 +27,14 @@ namespace Visualise
             }
         }
 
-        public App()
+        public App(string filePath)
         {
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+
+            FilePath = filePath;
         }
 
         protected override void OnStart()

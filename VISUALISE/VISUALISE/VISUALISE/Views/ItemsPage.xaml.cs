@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using Visualise.Models;
 using Visualise.Views;
 using Visualise.ViewModels;
+using SQLite;
+using System.Linq;
 
 namespace Visualise.Views
 {
@@ -28,7 +30,7 @@ namespace Visualise.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var form = args.SelectedItem as Form;
+            var form = args.SelectedItem as FormModel;
             if (form == null)
                 return;
 
@@ -47,8 +49,16 @@ namespace Visualise.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Forms.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
+            {
+                conn.CreateTable<FormModel>();
+                var Form = conn.Table<FormModel>().ToList();
+
+                FormListView.ItemsSource = Form;
+            }
+
+                if (viewModel.Forms.Count == 0)
+                    viewModel.LoadItemsCommand.Execute(null);
         }
     }
 }

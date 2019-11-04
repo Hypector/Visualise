@@ -5,7 +5,8 @@ using Xamarin.Forms.Xaml;
 
 using Visualise.Models;
 using Visualise.ViewModels;
-using Entry = Visualise.Models.Entry;
+using SQLite;
+using System.Diagnostics;
 
 namespace Visualise.Views
 {
@@ -15,8 +16,8 @@ namespace Visualise.Views
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel;
-        public Form Form { get; set; }
-        public Entry Entry { get; set; }
+        public FormModel Form { get; set; }
+        public EntryModel Entry { get; set; }
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
@@ -27,39 +28,53 @@ namespace Visualise.Views
 			Form = viewModel.Form;
 			
 			// type bindings
-			if (Form.XFormType == "Numeric")
+			if (Form.ChartType == "Line Graph")
 			{
 				val1.Keyboard = Keyboard.Numeric;
 			} else
 			{
 				val1.Keyboard = Keyboard.Text;
 			}
-
-			if (Form.YFormType == "Numeric")
-			{
-				val2.Keyboard = Keyboard.Numeric;
-			} else
-			{
-				val2.Keyboard = Keyboard.Text;
-			}
+			val2.Keyboard = Keyboard.Numeric;
         }
 
 		public ItemDetailPage()
         {
             InitializeComponent();
-			Form = new Form();
-			Entry = new Entry
-			{
-				FormID = Form.Id
+			Form = new FormModel();
+            Entry = new EntryModel
+            {
+                FormID = Form.DBID
 			};
             viewModel = new ItemDetailViewModel(Form);
             BindingContext = viewModel;
         }
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddEntry", Entry);
-			await Navigation.PopModalAsync();
-		}
+            EntryModel DBEntry = new EntryModel()
+            {
+                FormID = Form.DBID,
+                XValue = val1.Text,
+                YValue = val2.Text
+            };
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
+            {
+                conn.CreateTable<EntryModel>();
+                conn.Insert(DBEntry);
+            }
+
+            try
+            {
+                var x = await App.Database.SaveEntryAsync(DBEntry);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Sorry! There was an error: {ex.Message}");
+            }
+
+            await Navigation.PopModalAsync();
+        }
 
 		async void Cancel_Clicked(object sender, EventArgs e)
         {

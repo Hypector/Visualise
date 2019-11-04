@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Visualise.ViewModels"
              mc:Ignorable="d"
              x:Class="Visualise.Views.NewItemPage"
              Title="New Form">
@@ -11,6 +12,11 @@
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
+
+    <ContentPage.BindingContext>
+        <local:NewItemViewModel/>
+
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
@@ -18,34 +24,26 @@
             <Entry x:Name="ChartName" Text="{Binding Form.ChartName}" d:Text="Chart name" FontSize="Small" />
             <Label Text="Chart Description" FontSize="Medium" />
             <Entry x:Name="Description" Text="{Binding Form.ChartDescription}" d:Text="Chart description" FontSize="Small" Margin="0" />
-            <Label Text="X Value Name" FontSize="Medium" />
-            <Entry x:Name="XName" Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
-            <Label Text="X Value Type" FontSize="Medium" />
-			<Picker x:Name="xpicker"
-					Title="Select a type"
-					SelectedItem="{Binding Form.XFormType}">
-				<Picker.ItemsSource>
-				<x:Array Type="{x:Type x:String}">
-					<x:String>Text</x:String>
-					<x:String>Numeric</x:String>
-				</x:Array>
-				</Picker.ItemsSource>
-			</Picker>
 
-			<Label Text="Y Value Name" FontSize="Medium" />
-            <Entry x:Name="YName" Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
-            <Label Text="Y Value Type" FontSize="Medium" />
-			<Picker x:Name="ypicker"
+            <Label Text="Chart Type" FontSize="Medium" />
+            <Picker x:Name="chartType"
 					Title="Select a type"
-					SelectedItem="{Binding Form.YFormType}"
+					SelectedItem="{Binding Chart}"
 					>
-				<Picker.ItemsSource>
-				<x:Array Type="{x:Type x:String}">
-					<x:String>Text</x:String>
-					<x:String>Numeric</x:String>
-				</x:Array>
-				</Picker.ItemsSource>
-			</Picker>
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Line Graph</x:String>
+                        <x:String>Pie Graph</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="X Axis Name" IsVisible="{Binding IsLineGraph}" FontSize="Medium"  />
+            <Entry x:Name="XName" IsVisible="{Binding IsLineGraph}" Text="{Binding Form.XFormName}" d:Text="X value name" FontSize="Small" Margin="0" />
+
+            <Label Text="Y Axis Name" IsVisible="{Binding IsLineGraph}" FontSize="Medium" />
+            <Entry x:Name="YName" IsVisible="{Binding IsLineGraph}" Text="{Binding Form.YFormName}" d:Text="Y value name" FontSize="Small" Margin="0" />
+            
         </StackLayout>
     </ContentPage.Content>
     

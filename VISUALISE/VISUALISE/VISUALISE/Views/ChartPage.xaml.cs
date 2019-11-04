@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using Visualise.Models;
 using Visualise.ViewModels;
+using SQLite;
 
 namespace Visualise.Views
 {
@@ -14,7 +15,7 @@ namespace Visualise.Views
     public partial class ChartPage : ContentPage
     {
         ChartViewModel viewModel;
-        public Form Form { get; set; }
+        public FormModel Form { get; set; }
 
         public ChartPage(ChartViewModel viewModel)
         {
@@ -26,7 +27,13 @@ namespace Visualise.Views
 		public ChartPage()
         {
             InitializeComponent();
-			Form = new Form();
+			Form = new FormModel();
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
+            {
+                conn.CreateTable<EntryModel>();
+                var Form = conn.Table<EntryModel>().ToList();
+            }
 
             viewModel = new ChartViewModel(Form);
             BindingContext = viewModel;

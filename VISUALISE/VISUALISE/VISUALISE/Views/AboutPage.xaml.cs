@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.ComponentModel;
 using Visualise.Models;
 using Visualise.ViewModels;
@@ -32,6 +33,14 @@ namespace Visualise.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
+            {
+                conn.CreateTable<FormModel>();
+                var Form = conn.Table<FormModel>().ToList();
+
+                FormListView.ItemsSource = Form;
+            }
 
             if (viewModel.Forms.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);

@@ -8,6 +8,7 @@ using Visualise.Models;
 using Visualise.Data;
 using SQLite;
 using System.Diagnostics;
+using Visualise.ViewModels;
 
 namespace Visualise.Views
 {
@@ -16,43 +17,39 @@ namespace Visualise.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Form Form { get; set; }
-
         public NewItemPage()
         {
             InitializeComponent();
 
-			Form = new Form();
-			Form.XFormValues = new List<String>();
-			Form.YFormValues = new List<String>();
-			Form.EntryCount = 0;
-			Form.EntryCountString = "No entries";
-
-            BindingContext = this;
+            BindingContext = new NewItemViewModel();
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Form DBForm = new Form()
+            FormModel DBForm = new FormModel()
             {
                 ChartName = ChartName.Text,
                 ChartDescription = Description.Text,
-                XFormName = XName.Text,
-                XFormType = xpicker.SelectedItem.ToString(),
-                YFormName = YName.Text,
-                YFormType = ypicker.SelectedItem.ToString()
+                XAxisName = XName.Text,
+                YAxisName = YName.Text,
+                ChartType = chartType.SelectedItem.ToString()
             };
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
+            {
+                conn.CreateTable<FormModel>();
+                conn.Insert(DBForm);
+            }
 
             try
             {
-                var x = await App.Database.SaveAsync(DBForm);
+                var x = await App.Database.SaveFormAsync(DBForm);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Sorry! There was an error: {ex.Message}");
             }
 
-            MessagingCenter.Send(this, "AddForm", Form);
             await Navigation.PopModalAsync();
         }
 
