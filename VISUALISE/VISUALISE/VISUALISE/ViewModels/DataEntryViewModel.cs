@@ -8,11 +8,11 @@ using Entry = Visualise.Models.Entry;
 
 namespace Visualise.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class DataEntryViewModel : BaseViewModel
     {
 		public Form Form { get; set; }
 		public Entry Entry { get; set; }
-        public ItemDetailViewModel(Form form = null)
+        public DataEntryViewModel(Form form = null)
         {
             Title = form?.ChartName;
             Form = form;

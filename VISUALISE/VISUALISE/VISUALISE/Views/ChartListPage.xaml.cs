@@ -12,11 +12,11 @@ namespace Visualise.Views
     [DesignTimeVisible(false)]
     public partial class AboutPage : ContentPage
     {
-        AboutViewModel viewModel;
+        ChartListViewModel viewModel;
         public AboutPage()
         {
             InitializeComponent();
-            BindingContext = viewModel = new AboutViewModel();
+            BindingContext = viewModel = new ChartListViewModel();
         }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {

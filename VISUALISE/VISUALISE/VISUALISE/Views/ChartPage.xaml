@@ -7,11 +7,13 @@
              mc:Ignorable="d"
              x:Class="Visualise.Views.ChartPage"
              Title="{Binding Form.ChartName}">
-
-		<AbsoluteLayout Padding="0, 0, 0, 0">
-		<oxy:PlotView Model="{Binding Graph}"  
-                  AbsoluteLayout.LayoutBounds="20,0,.9,.9"  
-                  AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional" />
-	</AbsoluteLayout>
+		<ContentPage.ToolbarItems>
+			<ToolbarItem Text="History" Clicked="History_Clicked" />
+		</ContentPage.ToolbarItems>
+		<AbsoluteLayout Padding="15, 15, 15, 15">
+			<oxy:PlotView Model="{Binding Graph}"  
+					  AbsoluteLayout.LayoutBounds="20,0,.9,.9"  
+					  AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional" />
+		</AbsoluteLayout>
     
 </ContentPage>

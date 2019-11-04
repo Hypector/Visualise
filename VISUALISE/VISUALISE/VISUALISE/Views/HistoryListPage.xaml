@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 NavigationPage.HasBackButton="False"
+             mc:Ignorable="d"
+             x:Class="Visualise.Views.HistoryListPage"
+             Title="{Binding Title}"
+             x:Name="BrowseHistoryListPage">
+
+    <StackLayout>
+		<ListView x:Name="HistoryListView"
+                ItemsSource="{Binding HistoryData}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="False"
+                CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="30" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="30*" />
+								<ColumnDefinition Width="30*" />
+							</Grid.ColumnDefinitions>
+
+							<Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Text="{Binding xVal}"/>
+							<Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Text="{Binding yVal}"/>
+						</Grid>
+					</ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

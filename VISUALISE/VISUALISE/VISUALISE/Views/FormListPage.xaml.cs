@@ -18,12 +18,12 @@ namespace Visualise.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        FormListViewModel viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new FormListViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -32,7 +32,7 @@ namespace Visualise.Views
             if (form == null)
                 return;
 
-            await Navigation.PushModalAsync(new NavigationPage(new ItemDetailPage(new ItemDetailViewModel(form))));
+            await Navigation.PushModalAsync(new NavigationPage(new DataEntryPage(new DataEntryViewModel(form))));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
@@ -40,7 +40,7 @@ namespace Visualise.Views
 
         async void AddForm_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new NewFormPage()));
         }
 
         protected override void OnAppearing()

@@ -12,13 +12,13 @@ namespace Visualise.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class ItemDetailPage : ContentPage
+    public partial class DataEntryPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        DataEntryViewModel viewModel;
         public Form Form { get; set; }
         public Entry Entry { get; set; }
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public DataEntryPage(DataEntryViewModel viewModel)
         {
             InitializeComponent();
 
@@ -44,7 +44,7 @@ namespace Visualise.Views
 			}
         }
 
-		public ItemDetailPage()
+		public DataEntryPage()
         {
             InitializeComponent();
 			Form = new Form();
@@ -52,7 +52,7 @@ namespace Visualise.Views
 			{
 				FormID = Form.Id
 			};
-            viewModel = new ItemDetailViewModel(Form);
+            viewModel = new DataEntryViewModel(Form);
             BindingContext = viewModel;
         }
         async void Save_Clicked(object sender, EventArgs e)
