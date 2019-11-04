@@ -17,8 +17,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ChartListPage.xaml.cs">
+      <DependentUpon>ChartListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ChartPage.xaml.cs">
       <DependentUpon>ChartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DataEntryPage.xaml.cs">
+      <DependentUpon>DataEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FormListPage.xaml.cs">
+      <DependentUpon>FormListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewFormListPage.xaml.cs">
+      <DependentUpon>NewFormListPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
